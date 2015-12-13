@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+
+    <title>NodeJS chat</title>
+
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="/css/mainCss.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container bootstrap snippet">
+
+    <div class="row">
+        <div id="loadScreen" class="text-center">
+            <h1><span class="fa fa-spin fa-refresh fa-3x"></span></h1>
+            <h1 id="loadingMessage">Connecting to server...</h1>
+        </div>
+    </div>
+
+    <div class="row" id="namechangediv">
+
+        <div class="col-md-4 col-md-offset-4">
+
+            <div class="portlet portlet-default">
+                <div class="portlet-heading">
+                    <div class="portlet-title">
+                        <h4>Enter your username</h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-collapse collapse in">
+                    <form id="namechangeform">
+                        <input type="text" class="form-control" id="username">
+                        <input type="submit" class="btn btn-primary">
+                    </forM>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="mainChatView">
+
+        <div class="col-md-8">
+            <div class="portlet portlet-default">
+                <div class="portlet-heading">
+                    <div class="portlet-title">
+                        <h4> <span id="usernamelabel"></span></h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div id="chat" class="panel-collapse collapse in">
+                    <div>
+                        <div class="portlet-body chat-widget" style="overflow-y: auto; width: auto; height: 300px;">
+                            <ul id="messagelist">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="portlet-footer">
+                        <form role="form" id="mainmessagesform" action="" method="post">
+                            <div class="form-group">
+                                <textarea id="mainmessageinput" class="form-control"
+                                          placeholder="Enter message..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-default pull-right" value="Send">
+                                <span id="currenttime"></span> -
+                                <span id="timeonline"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="portlet portlet-default" id="sidebar">
+                <div class="portlet-heading">
+                    <div class="portlet-title">
+                        <h4>Online users: <span id="online-count"></span></h4>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-collapse collapse in">
+                        <div class="portlet-body chat-widget" style="overflow-y: auto; width: auto; height: 300px;">
+                            <ul id="userlist">
+
+                            </ul>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+</div>
+
+
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/bower_components/socket.io-1.2.0.js"></script>
+<script src="/bower_components/jquery.cookie/jquery.cookie.js"></script>
+<script src="/js/mainJS.js"></script>
+
+</body>
+</html>
