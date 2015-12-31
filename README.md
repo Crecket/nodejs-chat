@@ -1,5 +1,7 @@
 # nodejs-chat
 
+[![GitHub release](https://img.shields.io/github/release/crecket/nodejs-chat.svg)](https://github.com/Crecket/nodejs-chat)
+
 ## Usage
 
 - Install https://nodejs.org/en/
